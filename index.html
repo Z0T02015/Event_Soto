@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#05040b">
+  <meta name="description" content="Estás invitado a EVENT SOTO — una noche de música, amigos y buena vibra.">
+  <title>EVENT SOTO — Birthday Party</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <script src="config.js" defer></script>
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <div class="ambient ambient-one" aria-hidden="true"></div>
+  <div class="ambient ambient-two" aria-hidden="true"></div>
+  <header class="topbar shell">
+    <a class="brand" href="#inicio" aria-label="EVENT SOTO, inicio">
+      <svg class="brand-crown" viewBox="0 0 64 52" aria-hidden="true"><path d="M8 15 19 25 31 7l13 18 12-10-6 29H14L8 15Z"/><path d="M15 36h35"/><circle cx="8" cy="12" r="3"/><circle cx="31" cy="6" r="3"/><circle cx="57" cy="12" r="3"/></svg>
+      <span>EVENT<br><b>SOTO</b></span>
+    </a>
+    <div class="music-player" aria-label="Reproductor de música">
+      <button id="musicButton" class="music-toggle" type="button" aria-label="Reproducir música" aria-pressed="false">
+        <svg class="play-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="m8 5 12 7-12 7V5Z"/></svg>
+      </button>
+      <div class="equalizer" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+      <audio id="partyAudio" preload="none"></audio>
+      <span class="sr-only" id="musicStatus" role="status">Presiona reproducir para escuchar la canción local.</span>
+    </div>
+  </header>
+
+  <main id="inicio" class="shell">
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="hero-art" aria-hidden="true"></div>
+      <div class="hero-copy">
+        <div class="crown-mark" aria-hidden="true"><svg viewBox="0 0 120 82"><path d="m12 24 22 18L59 9l24 33 25-18-13 45H25L12 24Z"/><circle cx="12" cy="20" r="7"/><circle cx="59" cy="8" r="7"/><circle cx="108" cy="20" r="7"/></svg></div>
+        <h1 id="hero-title"><span>BIRTHDAY</span><em>PARTY</em></h1>
+        <p class="invite-title">¡Estás invitado a mi cumpleaños!</p>
+        <p class="invite-subtitle">Una noche de música, amigos y buena vibra.</p>
+      </div>
+      <div class="event-facts" aria-label="Detalles del evento">
+        <div class="fact-card"><svg viewBox="0 0 48 48" aria-hidden="true"><rect x="7" y="11" width="34" height="31" rx="3"/><path d="M15 6v10M33 6v10M7 20h34M16 27h.1M24 27h.1M32 27h.1M16 34h.1M24 34h.1"/></svg><span>Sáb, 14 Nov 2026</span></div>
+        <span class="fact-divider" aria-hidden="true"></span>
+        <div class="fact-card"><svg viewBox="0 0 48 48" aria-hidden="true"><circle cx="24" cy="24" r="18"/><path d="M24 13v12l8 5"/></svg><span>8:00 PM</span></div>
+      </div>
+      <p class="location"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M19 10c0 5-7 12-7 12S5 15 5 10a7 7 0 1 1 14 0Z"/><circle cx="12" cy="10" r="2"/></svg><span>Al frente del Terminal Pesquero<br>La Curva · Dean Valdivia</span></p>
+    </section>
+
+    <section class="countdown-panel neon-panel" aria-labelledby="countdown-heading">
+      <h2 id="countdown-heading"><svg viewBox="0 0 48 48" aria-hidden="true"><path d="M14 5h20M14 43h20M16 7c0 10 16 12 16 17S16 31 16 41M32 7c0 10-16 12-16 17s16 7 16 17"/></svg><span>Falta para el evento</span></h2>
+      <div id="countdown" class="countdown-grid" aria-live="off">
+        <div class="count-box"><strong id="days">—</strong><span>Días</span></div>
+        <div class="count-box"><strong id="hours">—</strong><span>Horas</span></div>
+        <div class="count-box"><strong id="minutes">—</strong><span>Min</span></div>
+        <div class="count-box"><strong id="seconds">—</strong><span>Seg</span></div>
+      </div>
+      <p id="eventLive" class="event-live" hidden>¡La fiesta ya comenzó! 🎉</p>
+    </section>
+
+    <section id="registro" class="rsvp-panel neon-panel" aria-labelledby="rsvp-heading">
+      <div class="rsvp-copy">
+        <h2 id="rsvp-heading"><svg viewBox="0 0 48 48" aria-hidden="true"><path d="m8 34 25-25a5 5 0 0 1 7 7L15 41l-9 2 2-9Z"/><path d="m29 13 7 7M8 34l7 7"/></svg><span>Confirma tu asistencia</span></h2>
+        <p>Registra tu nombre, apellido y correo para separar tu ingreso y participar en la ruleta.</p>
+        <form id="rsvpForm" novalidate>
+          <div class="form-row"><label>Primer nombre<input name="firstName" autocomplete="given-name" required maxlength="60" placeholder="Tu nombre"></label><label>Apellido<input name="lastName" autocomplete="family-name" required maxlength="60" placeholder="Tu apellido"></label></div>
+          <label>Correo electrónico de Google<input name="email" type="email" inputmode="email" autocomplete="email" required maxlength="254" placeholder="tu.correo@gmail.com"></label>
+          <p class="privacy-note"><svg viewBox="0 0 20 20" aria-hidden="true"><rect x="4" y="8" width="12" height="10" rx="2"/><path d="M7 8V5a3 3 0 0 1 6 0v3"/></svg>Tus datos son privados y solo los verá el organizador.</p>
+          <button id="registerButton" class="register-button" type="submit" disabled>Registrarme <span aria-hidden="true">→</span></button>
+          <p id="formStatus" class="status-message" role="status" aria-live="polite">Completa tus datos para solicitar el registro.</p>
+        </form>
+      </div>
+      <div class="wheel-wrap">
+        <div class="wheel-pointer" aria-hidden="true"></div>
+        <div id="rouletteWheel" class="roulette-wheel" role="img" aria-label="Ruleta con seis segmentos de bebidas">
+          <span class="wheel-icon icon-one" aria-hidden="true">🥤</span><span class="wheel-icon icon-two" aria-hidden="true">🧃</span><span class="wheel-icon icon-three" aria-hidden="true">🍸</span><span class="wheel-icon icon-four" aria-hidden="true">🍹</span><span class="wheel-icon icon-five" aria-hidden="true">🍾</span><span class="wheel-icon icon-six" aria-hidden="true">🥛</span>
+          <span class="wheel-center" aria-hidden="true"></span>
+        </div>
+        <button id="spinButton" class="spin-button" type="button" disabled>Girar ruleta</button>
+        <p id="rouletteStatus" class="roulette-status" role="status" aria-live="polite">La ruleta se habilita después de confirmar el registro.</p>
+      </div>
+    </section>
+    <p class="footer-note">EVENT SOTO <span>·</span> NOS VEMOS EN LA PISTA</p>
+  </main>
+</body>
+</html>
