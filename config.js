@@ -3,7 +3,7 @@
  * Keep secrets out of this GitHub Pages repository.
  */
 window.EVENT_SOTO_CONFIG = Object.freeze({
-  appsScriptUrl: "https://script.google.com/macros/s/AKfycbxj2pmQVL5ltM66epbQNfbdAd9dFUyZJV8i5UsZeA7ves_Eh6Brrs6f9oigchdQwKBfEg/exec",
+  appsScriptUrl: "https://script.google.com/macros/s/AKfycbzd2y57YjtYqE9488LcVDm1NEx1OEtp1HPCSzoJ3TgBm78Pvu4EumQXwtNEpJG4cO0fIA/exec",
   // The owner confirmed the latest deployment has the six agreed categories.
   // Runtime response validation still prevents the wheel from showing an unknown category.
   backendContractVerified: true,
